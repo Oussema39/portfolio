@@ -10,6 +10,13 @@ const colors = {
 };
 
 const theme = extendTheme({
+  styles: {
+    global: {
+      "::selection": {
+        color: "brand.main",
+      },
+    },
+  },
   colors,
 });
 

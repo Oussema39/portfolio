@@ -2,7 +2,7 @@ import { Box, Button, Container, Flex, IconButton } from "@chakra-ui/react";
 import React from "react";
 import ChakraLink from "./custom/ChakraLink";
 import NavbarMenu from "./NavbarMenu";
-import Logo from "./custom/Logo";
+import Logo from "./Logo";
 import { Navbarlinks } from "../utils/config";
 
 const Navbar = () => {
@@ -18,7 +18,7 @@ const Navbar = () => {
               key={href.toString()}
               href={href}
               _hover={{
-                color: "brand.main",
+                color: "brand.main.default",
               }}
               fontSize="lg"
             >
@@ -32,10 +32,10 @@ const Navbar = () => {
         <Button
           display={["none", "none", "block"]}
           size="lg"
-          bg="brand.main"
+          bg="brand.main.default"
           color="whiteAlpha.900"
           _hover={{
-            bg: "brand.main",
+            bg: "brand.main.default",
           }}
         >
           Hire Me

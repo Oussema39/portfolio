@@ -1,19 +1,23 @@
 import {
+  Box,
+  Center,
   Container,
   ContainerProps,
+  Divider,
   Heading,
   HeadingProps,
   Text,
   TextProps,
 } from "@chakra-ui/react";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface SectionProps extends Omit<ContainerProps, "title"> {
   title?: string | ReactNode;
   subtitle?: string;
   titleHeadingProps?: HeadingProps;
   subtitleHeadingProps?: TextProps;
-  children: ReactNode;
+  withDivider?: boolean;
+  children?: ReactNode;
 }
 
 const Section = ({
@@ -22,6 +26,7 @@ const Section = ({
   subtitle,
   titleHeadingProps,
   subtitleHeadingProps,
+  withDivider,
   ...props
 }: SectionProps) => {
   return (
@@ -46,13 +51,18 @@ const Section = ({
         <Text
           textAlign="center"
           color="gray.600"
-          mb={14}
+          mb={withDivider ? 8 : 14}
           fontSize={["sm", "md", "md"]}
           fontWeight="medium"
           {...subtitleHeadingProps}
         >
           {subtitle}
         </Text>
+      )}
+      {withDivider && (
+        <Center mb={14}>
+          <Divider variant="custom" width={["3rem", "3rem", "5rem"]} />
+        </Center>
       )}
       {children}
     </Container>

@@ -13,7 +13,7 @@ const ChakraImage = forwardRef<HTMLImageElement, ChakraImageProps>(
       height={70}
       as={NextImage}
       alt={alt}
-      fallback={<ViewOffIcon color="brand.main" />}
+      fallback={<ViewOffIcon color="brand.main.default" />}
       {...props}
     />
   )

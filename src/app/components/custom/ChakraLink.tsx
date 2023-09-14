@@ -12,22 +12,23 @@ const ChakraLink = forwardRef<HTMLAnchorElement, ChakraLinkProps>(
       ref={ref}
       as={NextLink}
       position="relative"
-      _after={{
-        content: `''`,
-        position: "absolute",
-        bg: "brand.main",
-        height: "1px",
-        width: "full",
-        left: 0,
-        bottom: 0,
-        transformOrigin: "left",
-        transform: "scaleX(100%)",
-        transition: "transform 1s ease",
-      }}
-      _hover={{
-        transform: "scaleX(100%)",
-        transformOrigin: "right",
-      }}
+      // TODO: Add link border bottom animation
+      // _after={{
+      //   content: `''`,
+      //   position: "absolute",
+      //   bg: "brand.main.default",
+      //   height: "1px",
+      //   width: "full",
+      //   left: 0,
+      //   bottom: 0,
+      //   transformOrigin: "left",
+      //   transform: "scaleX(100%)",
+      //   transition: "transform 1s ease",
+      // }}
+      // _hover={{
+      //   transform: "scaleX(100%)",
+      //   transformOrigin: "right",
+      // }}
       {...props}
     >
       {children}

@@ -26,9 +26,9 @@ const NavbarMenu = () => {
         aria-label="Options"
         icon={
           open ? (
-            <CloseIcon color="brand.main" boxSize="3" />
+            <CloseIcon color="brand.main.default" boxSize="3" />
           ) : (
-            <HamburgerIcon color="brand.main" boxSize="5" />
+            <HamburgerIcon color="brand.main.default" boxSize="5" />
           )
         }
         variant="outline"
@@ -41,7 +41,7 @@ const NavbarMenu = () => {
               as={ChakraLink}
               href={href}
               _hover={{
-                color: "brand.main",
+                color: "brand.main.default",
               }}
             >
               {label}
@@ -56,10 +56,10 @@ const NavbarMenu = () => {
             autoFocus
             as={Button}
             textAlign="left"
-            bg="brand.main"
+            bg="brand.main.default"
             color="whiteAlpha.900"
             _hover={{
-              bg: "brand.main",
+              bg: "brand.main.default",
             }}
           >
             Hire Me

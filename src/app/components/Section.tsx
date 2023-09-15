@@ -40,7 +40,7 @@ const Section = ({
           whiteSpace="nowrap"
           textAlign="center"
           mb={6}
-          color="brand.accent"
+          color="brand.accent.default"
           textTransform="capitalize"
           {...titleHeadingProps}
         >
@@ -50,7 +50,7 @@ const Section = ({
       {subtitle && (
         <Text
           textAlign="center"
-          color="gray.600"
+          color="brand.accent.400"
           mb={withDivider ? 8 : 14}
           fontSize={["sm", "md", "md"]}
           fontWeight="medium"

@@ -37,7 +37,6 @@ const Section = ({
     >
       {title && (
         <Heading
-          whiteSpace="nowrap"
           textAlign="center"
           mb={6}
           color="brand.accent.default"

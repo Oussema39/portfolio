@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Section from "../Section";
 import MePicture from "../MePicture";
 import ActionButton from "../ActionButton";
@@ -28,7 +28,13 @@ const Hero = () => {
         subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, necessitatibus?"
       >
         <Flex justifyContent={["center", "center", "start"]} mb={6}>
-          <ActionButton>Learn more</ActionButton>
+          <Link
+            href="/files/Oussema_Heni_Resume.pdf"
+            target="_self"
+            download="Oussema_Heni_Resume"
+          >
+            <ActionButton>Download Resume</ActionButton>
+          </Link>
         </Flex>
         <Flex
           justifyContent={["center", "center", "end"]}

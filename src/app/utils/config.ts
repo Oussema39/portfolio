@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Link from "../interface/Link";
 
 export const Navbarlinks: Link[] = [

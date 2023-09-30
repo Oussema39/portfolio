@@ -2,13 +2,12 @@ import { Box } from "@chakra-ui/react";
 import Image from "next/image";
 
 type LogoProps = {
-  height?: string;
-  width?: string;
+  dimensions?: string[];
 };
 
-const dimensions: [string, string] = ["50px", "60px"];
+const defaultDimensions: [string, string] = ["50px", "60px"];
 
-const Logo = ({ height, width }: LogoProps) => {
+const Logo = ({ dimensions }: LogoProps) => {
   return (
     //TODO : Use custom image
     // <ChakraImage
@@ -19,7 +18,7 @@ const Logo = ({ height, width }: LogoProps) => {
     //   {...props}
     // />
 
-    <Box boxSize={dimensions} position="relative">
+    <Box boxSize={dimensions ?? defaultDimensions} position="relative">
       <Image src="/images/logo.png" alt="logo" fill />
     </Box>
   );

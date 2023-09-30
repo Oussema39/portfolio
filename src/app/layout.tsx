@@ -1,6 +1,7 @@
 import ChakraUIProvider from "@/app/context/ChakraUIProvider";
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Oussema Heni",
@@ -18,6 +19,7 @@ export default function RootLayout({
         <ChakraUIProvider>
           <Navbar />
           {children}
+          <Footer />
         </ChakraUIProvider>
       </body>
     </html>

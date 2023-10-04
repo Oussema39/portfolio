@@ -5,12 +5,14 @@ import {
   Grid,
   GridItem,
   Heading,
+  Link,
   Text,
 } from "@chakra-ui/react";
 import Section from "../Section";
 import ActionButton from "../ActionButton";
 import Image from "next/image";
 import { aboutMeExtended } from "@/app/utils/personal";
+import EmailButton from "../EmailButton";
 
 const AboutMe = () => {
   return (
@@ -43,9 +45,11 @@ const AboutMe = () => {
           </Text>
         </GridItem>
         <GridItem gridArea={"contact-button"}>
-          <ActionButton size="md" mb={20}>
-            Contact Me
-          </ActionButton>
+          <EmailButton>
+            <ActionButton size="md" mb={20}>
+              Contact Me
+            </ActionButton>
+          </EmailButton>
         </GridItem>
         <GridItem gridArea={"picture"}>
           <Center>

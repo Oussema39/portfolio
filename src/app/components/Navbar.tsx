@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, IconButton } from "@chakra-ui/react";
+import { Box, Button, Container, Flex } from "@chakra-ui/react";
 import React from "react";
 import ChakraLink from "./custom/ChakraLink";
 import NavbarMenu from "./NavbarMenu";

@@ -1,3 +1,5 @@
+export const proEmail = "oussema.devpro@gmail.com";
+
 export const aboutMe =
   "Hey there! I'm Oussema Heni, a full stack developer with a knack for creative design. I love turning ideas into code and crafting beautiful, user-centric interfaces. Whether it's coding functionalities or playing with colors and typography, I'm all about creating impactful digital experiences. Let's collaborate and bring innovative ideas to life!";
 

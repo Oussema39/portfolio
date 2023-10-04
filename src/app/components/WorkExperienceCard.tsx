@@ -2,32 +2,38 @@ import {
   Card,
   CardBody,
   Circle,
+  HStack,
   Heading,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
+import { WorkExperience } from "../interface/WorkExperience";
 
-type Props = {};
-
-const WorkExperienceCard = (props: Props) => {
+const WorkExperienceCard = ({
+  jobTitle,
+  description,
+  companyName,
+  startDate,
+  endDate,
+}: WorkExperience) => {
   return (
-    <Card>
-      <CardBody textAlign={"left"}>
-        <VStack spacing={6} mb={6} alignItems={"start"}>
-          <Heading as="h3" color="brand.accent.400" fontSize={"24px"}>
-            UI/UX Designer
-          </Heading>
-          <Text color="brand.main.400">2015-2018</Text>
-          <Text>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
-            ratione porro cumque optio dolor suscipit consequatur modi tempora.
-            Praesentium atque minus incidunt exercitationem consequatur dolores.
-            Tempora sequi tenetur id dolor.
-          </Text>
+    <Card height="full">
+      <CardBody display={"flex"} flexDirection={"column"}>
+        <VStack spacing={6} mb={6} alignItems={"start"} flex={1}>
+          <VStack alignItems={"start"}>
+            <Heading as="h3" color="brand.accent.400" fontSize={"24px"}>
+              {jobTitle}
+            </Heading>
+            <Text color="brand.accent.400">{companyName}</Text>
+          </VStack>
+          <Text color="brand.main.400">{`${startDate.getFullYear()}-${endDate.getFullYear()}`}</Text>
+          <Text>{description}</Text>
         </VStack>
         <Circle bg="brand.main.400" justifyContent={"left"} pl={"6"}>
-          <Text textAlign={"left"}>UI/UX Designer</Text>
+          <Text textAlign={"left"} color={"whiteAlpha.900"}>
+            {jobTitle}
+          </Text>
         </Circle>
       </CardBody>
     </Card>

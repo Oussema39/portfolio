@@ -1,10 +1,9 @@
 import { Box, Center, Flex, Grid, GridItem } from "@chakra-ui/react";
 import Section from "../Section";
 import WorkExperienceCard from "../WorkExperienceCard";
+import { workExperiences } from "@/app/data/workExperiences";
 
 const WorkExperience = () => {
-  const workExperienceCards = [0, 1, 2, 3, 4, 5];
-
   return (
     <Box
       isolation="isolate"
@@ -23,24 +22,23 @@ const WorkExperience = () => {
     >
       <Section
         title="Work Experience"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        subtitle="Checkout my work history"
         withDivider
       >
         <Flex gap={8} mb={"6"} flexWrap={["wrap", "nowrap"]}>
-          {workExperienceCards.slice(0, 2).map((card) => (
-            <Box key={card} flexBasis={"1fr"}>
-              <WorkExperienceCard />
+          {workExperiences.slice(0, 2).map((experience) => (
+            <Box key={experience.endDate.toString()} flexBasis={"1fr"}>
+              <WorkExperienceCard {...experience} />
             </Box>
           ))}
         </Flex>
         <Grid
           gap={12}
           gridTemplateColumns="repeat(auto-fit, minmax(200px,1fr))"
-          placeItems="center"
         >
-          {workExperienceCards.slice(3).map((card) => (
-            <GridItem key={card.toString()}>
-              <WorkExperienceCard />
+          {workExperiences.slice(3).map((experience) => (
+            <GridItem key={experience.endDate.toString()}>
+              <WorkExperienceCard {...experience} />
             </GridItem>
           ))}
         </Grid>

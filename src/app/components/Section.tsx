@@ -40,7 +40,6 @@ const Section = ({
           textAlign="center"
           mb={6}
           color="brand.accent.default"
-          textTransform="capitalize"
           {...titleHeadingProps}
         >
           {title}

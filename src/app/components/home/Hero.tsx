@@ -2,6 +2,8 @@ import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import Section from "../Section";
 import MePicture from "../MePicture";
 import ActionButton from "../ActionButton";
+import AnimatedText from "../AnimatedText";
+import { aboutMe } from "@/app/utils/personal";
 
 const Hero = () => {
   return (
@@ -13,7 +15,8 @@ const Hero = () => {
         title={
           <Text>
             {/*eslint-disable-next-line react/no-unescaped-entities*/}
-            i'm web developer <br /> oussema heni
+            I'm a <AnimatedText text="full stack developer" />
+            <br />
           </Text>
         }
         titleHeadingProps={{
@@ -25,7 +28,7 @@ const Hero = () => {
         subtitleHeadingProps={{
           textAlign: ["center", "center", "left"],
         }}
-        subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque, necessitatibus?"
+        subtitle={aboutMe}
       >
         <Flex justifyContent={["center", "center", "start"]} mb={6}>
           <Link

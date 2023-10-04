@@ -1,9 +1,9 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import Section from "../Section";
 import ServiceCard from "../ServiceCard";
+import { services } from "@/app/data/services";
 
 const MyServices = () => {
-  const cards = [0, 1, 2];
   return (
     <Box
       isolation="isolate"
@@ -23,7 +23,7 @@ const MyServices = () => {
     >
       <Section
         title="What Services I'm Providing"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        subtitle="Stay up-to-date of my latest services"
         withDivider
       >
         <Grid
@@ -31,9 +31,9 @@ const MyServices = () => {
           placeItems="center"
           gap={"20"}
         >
-          {cards.map((card) => (
-            <GridItem key={card.toString()}>
-              <ServiceCard />
+          {services.map((service) => (
+            <GridItem key={service.title}>
+              <ServiceCard service={service} />
             </GridItem>
           ))}
         </Grid>

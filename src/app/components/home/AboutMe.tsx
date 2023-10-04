@@ -10,14 +10,11 @@ import {
 import Section from "../Section";
 import ActionButton from "../ActionButton";
 import Image from "next/image";
+import { aboutMeExtended } from "@/app/utils/personal";
 
 const AboutMe = () => {
   return (
-    <Section
-      title="About me"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      withDivider
-    >
+    <Section title="About me" withDivider>
       <Grid
         display={["block", "block", "grid"]}
         gridTemplateColumns={"repeat(3, 1fr)"}
@@ -37,17 +34,12 @@ const AboutMe = () => {
         </GridItem>
         <GridItem gridArea={"paragraph1"}>
           <Text mb={4} textAlign="justify" color="brand.accent.400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
-            luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            {aboutMeExtended[0]}
           </Text>
         </GridItem>
         <GridItem gridArea={"paragraph2"}>
           <Text mb={8} textAlign="justify" color="brand.accent.400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-            eius laboriosam fuga. Pariatur accusantium placeat voluptas harum
-            est culpa consectetur!
+            {aboutMeExtended[1]}
           </Text>
         </GridItem>
         <GridItem gridArea={"contact-button"}>

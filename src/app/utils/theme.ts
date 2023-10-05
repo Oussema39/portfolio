@@ -68,6 +68,9 @@ const theme = extendTheme({
         padding: 0,
         margin: 0,
       },
+      body: {
+        "scroll-behavior": "smooth",
+      },
       a: {
         "text-decoration": "none !important",
       },

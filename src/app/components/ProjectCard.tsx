@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Button,
@@ -11,15 +12,30 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { Project } from "../interface/Project";
 
 type ProjectCardProps = {
   comingSoon?: boolean;
-};
+} & Project;
 
-const ProjectCard = ({ comingSoon }: ProjectCardProps) => {
+const ProjectCard = ({
+  comingSoon,
+  name,
+  description,
+  githubRepoLink,
+  liveDemoLink,
+  imgPath,
+}: ProjectCardProps) => {
   return (
-    <Card isolation={"isolate"} position={"relative"} overflow={"hidden"}>
-      {comingSoon && (
+    <Card
+      isolation={"isolate"}
+      position={"relative"}
+      shadow={"none"}
+      display={"flex"}
+      flexDirection={"column"}
+      height={"full"}
+    >
+      {/* {comingSoon && (
         <Box
           position="absolute"
           content={`''`}
@@ -27,11 +43,22 @@ const ProjectCard = ({ comingSoon }: ProjectCardProps) => {
           backgroundColor="rgba(255,255,255,0.2)"
           backdropFilter="blur(5px)"
         />
-      )}
-      <CardHeader padding={0}>
-        <Image src="/images/computer.jpg" alt="project-image" />
+      )} */}
+      <CardHeader
+        padding={0}
+        borderBottom={"1px"}
+        borderColor={"gray.200"}
+        flexGrow={1}
+      >
+        <Image
+          height={20}
+          src={imgPath ?? "/images/image-preview.svg"}
+          alt={`${name}-preview`}
+          objectFit={"cover"}
+          // fallback={"/images/image-preview.svg"}
+        />
       </CardHeader>
-      <CardBody overflow={"hidden"}>
+      <CardBody overflow={"hidden"} flex={1}>
         <Heading
           as={"h2"}
           fontSize={"lg"}
@@ -40,20 +67,16 @@ const ProjectCard = ({ comingSoon }: ProjectCardProps) => {
           mb={comingSoon ? "1" : "6"}
           zIndex={1}
         >
-          Password Generator
+          {name}
         </Heading>
         {comingSoon && (
           <Text fontWeight={"light"} color={"brand.main.400"} fontSize={"sm"}>
             Coming Soon
           </Text>
         )}
-        <Text>
-          This is a simple Next.js web application that generates random
-          passwords and provides the ability to refresh for a new password or
-          copy the generated password to the clipboard.
-        </Text>
+        <Text>{description}</Text>
       </CardBody>
-      <CardFooter>
+      <CardFooter justifySelf={"end"}>
         <HStack>
           {
             //TODO: change button chevron right to icons not text
@@ -65,16 +88,23 @@ const ProjectCard = ({ comingSoon }: ProjectCardProps) => {
             bg={"gray.700"}
             color={"whiteAlpha.900"}
             borderRadius={"full"}
+            isDisabled={!liveDemoLink}
           >
             Live Demo {">"}
           </Button>
           <Button
             _hover={{
               bg: "gray.600",
+              cursor: "pointer",
             }}
             bg={"gray.700"}
             color={"whiteAlpha.900"}
             borderRadius={"full"}
+            onClick={() => {}}
+            as={"a"}
+            href={githubRepoLink}
+            target="_blank"
+            isDisabled={!githubRepoLink}
           >
             GitHub {">"}
           </Button>

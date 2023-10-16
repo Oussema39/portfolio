@@ -9,6 +9,7 @@ const Projects = async () => {
     <Section title="Projects" subtitle="Lorem ipsum dolor sit amet.">
       <Grid
         gridTemplateColumns={"repeat(auto-fit, minmax(250px, 1fr))"}
+        gridAutoRows={"1fr"}
         gap={8}
       >
         {projects.map((project) => (

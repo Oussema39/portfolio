@@ -1,6 +1,5 @@
 "use client";
 import {
-  Box,
   Button,
   Card,
   CardBody,
@@ -11,8 +10,9 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Project } from "../interface/Project";
+import ColorThief from "colorthief";
 
 type ProjectCardProps = {
   comingSoon?: boolean;
@@ -26,6 +26,16 @@ const ProjectCard = ({
   liveDemoLink,
   imgPath,
 }: ProjectCardProps) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [imgDominantColor, setImgDominantColor] = useState<RGB | null>(null);
+
+  const handleOnLoad = () => {
+    const colorThief = new ColorThief();
+    const img = imgRef.current;
+    const result = colorThief.getColor(img, 25);
+    setImgDominantColor(result);
+  };
+
   return (
     <Card
       isolation={"isolate"}
@@ -45,20 +55,24 @@ const ProjectCard = ({
         />
       )} */}
       <CardHeader
+        height={60}
         padding={0}
         borderBottom={"1px"}
         borderColor={"gray.200"}
-        flexGrow={1}
+        backgroundColor={`rgba(${imgDominantColor?.join(",")},.8)`}
       >
         <Image
-          height={20}
+          onLoad={handleOnLoad}
+          ref={imgRef}
           src={imgPath ?? "/images/image-preview.svg"}
           alt={`${name}-preview`}
-          objectFit={"cover"}
+          width={"full"}
+          height={60}
+          objectFit={"contain"}
           // fallback={"/images/image-preview.svg"}
         />
       </CardHeader>
-      <CardBody overflow={"hidden"} flex={1}>
+      <CardBody>
         <Heading
           as={"h2"}
           fontSize={"lg"}
@@ -74,7 +88,7 @@ const ProjectCard = ({
             Coming Soon
           </Text>
         )}
-        <Text>{description}</Text>
+        <Text noOfLines={4}>{description}</Text>
       </CardBody>
       <CardFooter justifySelf={"end"}>
         <HStack>

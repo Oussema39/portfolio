@@ -1,6 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import Section from "../Section";
 import FeedbackCard from "../FeedbackCard";
+import { feedbacks } from "@/app/data/feedbacks";
 
 const ClientsFeedback = () => {
   return (
@@ -16,17 +17,16 @@ const ClientsFeedback = () => {
           "linear-gradient(brand.main.default , brand.accent.default , transparent 60%)",
         borderTopLeftRadius: "full",
         left: ["10", "20"],
+        top: 4,
         opacity: 0.05,
       }}
     >
-      <Section
-        title="What My Clients Says"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        withDivider
-      >
+      <Section title="What My Clients Say ?" withDivider>
         <Flex flexWrap={"wrap"} justifyContent={"center"} gap={8}>
-          {[0, 1, 2].map((feedback) => (
-            <FeedbackCard key={feedback.toString()} />
+          {feedbacks.map((feedback) => (
+            <Box key={feedback.clientName}>
+              <FeedbackCard {...feedback} />
+            </Box>
           ))}
         </Flex>
       </Section>

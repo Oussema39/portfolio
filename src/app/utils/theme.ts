@@ -6,7 +6,7 @@ const colors: { brand: Record<string, ColorShade> } = {
   brand: {
     main: {
       default: "#ec5b53",
-      "100": "#fdefee",
+      "100": "#fdefee70",
       "200": "#f7bdba",
       "300": "#f2928c",
       "400": "#ed665e",
@@ -61,21 +61,21 @@ const theme = extendTheme({
     global: {
       "::selection": {
         color: "brand.main.default",
-        "background-color": "black",
+        backgroundColor: "black",
       },
       "*": {
-        "box-sizing": "border-box",
+        boxSizing: "border-box",
         padding: 0,
         margin: 0,
       },
       body: {
-        "scroll-behavior": "smooth",
+        scrollBehavior: "smooth",
       },
       a: {
-        "text-decoration": "none !important",
+        textDecoration: "none !important",
       },
       "img, video, picture, svg": {
-        "max-width": "full",
+        maxWidth: "full",
         display: "block",
       },
     },

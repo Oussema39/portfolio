@@ -20,7 +20,7 @@ const Hero = () => {
           </Text>
         }
         titleHeadingProps={{
-          fontSize: ["4xl", "7xl", "7xl"],
+          fontSize: ["4xl", "5xl", "6xl", "7xl"],
           textAlign: ["center", "center", "left"],
           whiteSpace: ["nowrap", "normal", "normal"],
           as: "h1",

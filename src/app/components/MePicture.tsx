@@ -12,7 +12,12 @@ const MePicture = (props: BoxProps) => {
       bg="whiteAlpha.900"
       {...props}
     >
-      <Image src="/images/me.png" alt="Oussema Heni" fill objectFit="contain" />
+      <Image
+        src="/images/me.png"
+        alt="Oussema Heni"
+        fill
+        style={{ objectFit: "contain" }}
+      />
     </Box>
   );
 };

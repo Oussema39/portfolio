@@ -68,7 +68,9 @@ const ProjectCard = ({
           alt={`${name}-preview`}
           width={"full"}
           height={60}
-          objectFit={"contain"}
+          style={{
+            objectFit: "contain",
+          }}
           // fallback={"/images/image-preview.svg"}
         />
       </CardHeader>

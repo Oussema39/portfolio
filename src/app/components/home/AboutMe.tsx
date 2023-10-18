@@ -74,10 +74,10 @@ const AboutMe = () => {
               <Image
                 src="/images/computer.jpg"
                 alt="computer"
-                objectFit="cover"
                 fill
                 style={{
                   borderRadius: "1rem 0.5rem 0.5rem 1rem",
+                  objectFit: "cover",
                 }}
               />
             </Box>

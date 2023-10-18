@@ -37,7 +37,7 @@ const WorkExperience = () => {
           gridTemplateColumns="repeat(auto-fit, minmax(200px,1fr))"
         >
           {workExperiences.slice(3).map((experience) => (
-            <GridItem key={experience.endDate.toString()}>
+            <GridItem key={experience.id}>
               <WorkExperienceCard {...experience} />
             </GridItem>
           ))}

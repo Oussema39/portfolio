@@ -11,6 +11,7 @@ const Footer = () => {
           w={"full"}
           direction={["column", "column", "row"]}
           justifyContent={"space-between"}
+          alignItems={["center", "", ""]}
           gap={8}
           mb={10}
         >
@@ -21,7 +22,11 @@ const Footer = () => {
               Copyright ©️ {new Date().getFullYear().toString()} Oussema Heni
             </Text>
           </Flex>
-          <Text fontSize={"2xl"} fontWeight={"bold"}>
+          <Text
+            fontSize={"2xl"}
+            fontWeight={"bold"}
+            textAlign={["center", "left", "left"]}
+          >
             oussema.devpro@gmail.com
           </Text>
         </Flex>

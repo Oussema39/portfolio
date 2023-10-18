@@ -2,6 +2,7 @@ import { WorkExperience } from "../interface/WorkExperience";
 
 export const workExperiences: WorkExperience[] = [
   {
+    id: "0",
     jobTitle: "Junior Web Developer",
     companyName: "CieloCosta",
     startDate: new Date("2022-07-01"),
@@ -14,6 +15,7 @@ export const workExperiences: WorkExperience[] = [
     `,
   },
   {
+    id: "1",
     jobTitle: "Web Developer",
     companyName: "Automatika",
     startDate: new Date("2022-05-01"),
@@ -24,6 +26,7 @@ export const workExperiences: WorkExperience[] = [
     `,
   },
   {
+    id: "2",
     jobTitle: "Freelancer",
     startDate: new Date("2021-08-01"),
     endDate: new Date("2022-05-01"),
@@ -33,6 +36,7 @@ export const workExperiences: WorkExperience[] = [
     `,
   },
   {
+    id: "3",
     jobTitle: "Freelancer (Consulting for students)",
     startDate: new Date("2021-06-01"),
     endDate: new Date("2021-08-01"),
@@ -42,6 +46,7 @@ export const workExperiences: WorkExperience[] = [
     `,
   },
   {
+    id: "4",
     jobTitle: "Full Stack Web Developer Intern",
     companyName: "ESPADA",
     startDate: new Date("2021-07-01"),
@@ -52,6 +57,7 @@ export const workExperiences: WorkExperience[] = [
     `,
   },
   {
+    id: "5",
     jobTitle: "Full Stack Web Developer Intern",
     companyName: "ESPADA",
     startDate: new Date("2020-02-01"),

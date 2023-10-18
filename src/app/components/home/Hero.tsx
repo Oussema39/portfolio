@@ -13,7 +13,7 @@ const Hero = () => {
         gridTemplateColumns="1fr 1fr"
         gridTemplateRows="repeat(3, min-content)"
         title={
-          <Text>
+          <Text as={"span"}>
             {/*eslint-disable-next-line react/no-unescaped-entities*/}
             I'm a <AnimatedText text="full stack developer" />
             <br />

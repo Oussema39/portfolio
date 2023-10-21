@@ -7,12 +7,15 @@ import {
   CardHeader,
   HStack,
   Heading,
+  IconButton,
   Image,
   Text,
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import { Project } from "../interface/Project";
 import ColorThief from "colorthief";
+import { ExpandIcon } from "../icons/ExpandIcon";
+import { useProjectModalContext } from "../context/ProjectModalProvider";
 
 type ProjectCardProps = {
   comingSoon?: boolean;
@@ -26,6 +29,8 @@ const ProjectCard = ({
   liveDemoLink,
   imgPath,
 }: ProjectCardProps) => {
+  const { setSelectedProject, onOpen } = useProjectModalContext();
+
   const imgRef = useRef<HTMLImageElement>(null);
   const [imgDominantColor, setImgDominantColor] = useState<RGB | null>(null);
 
@@ -124,6 +129,20 @@ const ProjectCard = ({
           >
             GitHub {">"}
           </Button>
+          <IconButton
+            aria-label="expand"
+            icon={<ExpandIcon />}
+            onClick={() => {
+              setSelectedProject({
+                name,
+                description,
+                githubRepoLink,
+                liveDemoLink,
+                imgPath,
+              });
+              onOpen();
+            }}
+          />
         </HStack>
       </CardFooter>
     </Card>

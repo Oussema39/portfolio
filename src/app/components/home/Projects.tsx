@@ -1,10 +1,27 @@
+"use client";
 import React from "react";
 import Section from "../Section";
-import { Box, Grid, GridItem } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+} from "@chakra-ui/react";
 import ProjectCard from "../ProjectCard";
 import { projects } from "@/app/data/projects";
+import { useProjectModalContext } from "@/app/context/ProjectModalProvider";
+import { Project } from "@/app/interface/Project";
 
-const Projects = async () => {
+const Projects = () => {
+  const { isOpen, onClose, selectedProject } = useProjectModalContext();
+
   return (
     <Box bg="brand.main.100">
       <Section
@@ -28,6 +45,25 @@ const Projects = async () => {
           ))}
         </Grid>
       </Section>
+      {selectedProject !== null && (
+        <Modal isOpen={isOpen} onClose={onClose} onEsc={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Modal Title</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <ProjectCard {...(selectedProject ?? ({} as Project))} />
+            </ModalBody>
+
+            <ModalFooter>
+              <Button colorScheme="blue" mr={3} onClick={onClose}>
+                Close
+              </Button>
+              <Button variant="ghost">Nice !</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      )}
     </Box>
   );
 };

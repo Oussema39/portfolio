@@ -5,6 +5,7 @@ import Hero from "./components/home/Hero";
 import MyServices from "./components/home/MyServices";
 import Projects from "./components/home/Projects";
 import WorkExperience from "./components/home/WorkExperience";
+import ProjectModalContext from "./context/ProjectModalProvider";
 
 const Home = () => {
   return (
@@ -13,7 +14,9 @@ const Home = () => {
       <AboutMe />
       <MyServices />
       <WorkExperience />
-      <Projects />
+      <ProjectModalContext>
+        <Projects />
+      </ProjectModalContext>
       <ClientsFeedback />
     </main>
   );

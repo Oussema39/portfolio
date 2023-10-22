@@ -13,6 +13,7 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  useColorMode,
 } from "@chakra-ui/react";
 import ProjectCard from "../ProjectCard";
 import { projects } from "@/app/data/projects";
@@ -46,21 +47,22 @@ const Projects = () => {
         </Grid>
       </Section>
       {selectedProject !== null && (
-        <Modal isOpen={isOpen} onClose={onClose} onEsc={onClose}>
+        <Modal
+          isOpen={isOpen}
+          onClose={onClose}
+          onEsc={onClose}
+          motionPreset="scale"
+        >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Modal Title</ModalHeader>
+            <ModalHeader>{selectedProject.name}</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <ProjectCard {...(selectedProject ?? ({} as Project))} />
+              <ProjectCard
+                fullDetails
+                {...(selectedProject ?? ({} as Project))}
+              />
             </ModalBody>
-
-            <ModalFooter>
-              <Button colorScheme="blue" mr={3} onClick={onClose}>
-                Close
-              </Button>
-              <Button variant="ghost">Nice !</Button>
-            </ModalFooter>
           </ModalContent>
         </Modal>
       )}

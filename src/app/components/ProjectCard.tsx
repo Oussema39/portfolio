@@ -1,5 +1,7 @@
 "use client";
 import {
+  Badge,
+  Box,
   Button,
   Card,
   CardBody,
@@ -10,6 +12,7 @@ import {
   IconButton,
   Image,
   Text,
+  Tooltip,
 } from "@chakra-ui/react";
 import React, { useRef, useState } from "react";
 import { Project } from "../interface/Project";
@@ -19,17 +22,21 @@ import { useProjectModalContext } from "../context/ProjectModalProvider";
 
 type ProjectCardProps = {
   comingSoon?: boolean;
+  fullDetails?: boolean;
 } & Project;
 
 const ProjectCard = ({
   comingSoon,
+  fullDetails,
+  id,
   name,
   description,
+  technologies,
   githubRepoLink,
   liveDemoLink,
   imgPath,
 }: ProjectCardProps) => {
-  const { setSelectedProject, onOpen } = useProjectModalContext();
+  const { setSelectedProject, onOpen, isOpen } = useProjectModalContext();
 
   const imgRef = useRef<HTMLImageElement>(null);
   const [imgDominantColor, setImgDominantColor] = useState<RGB | null>(null);
@@ -64,7 +71,7 @@ const ProjectCard = ({
         padding={0}
         borderBottom={"1px"}
         borderColor={"gray.200"}
-        backgroundColor={`rgba(${imgDominantColor?.join(",")},.8)`}
+        // backgroundColor={`rgba(${imgDominantColor?.join(",")},.8)`}
       >
         <Image
           onLoad={handleOnLoad}
@@ -79,30 +86,57 @@ const ProjectCard = ({
           // fallback={"/images/image-preview.svg"}
         />
       </CardHeader>
-      <CardBody>
-        <Heading
-          as={"h2"}
-          fontSize={"lg"}
-          fontWeight={"bold"}
-          color={"brand.accent.400"}
-          mb={comingSoon ? "1" : "6"}
-          zIndex={1}
-        >
-          {name}
-        </Heading>
+      <CardBody {...(fullDetails && { px: "0" })}>
+        {!fullDetails && (
+          <Heading
+            as={"h2"}
+            fontSize={"lg"}
+            fontWeight={"bold"}
+            color={"brand.accent.400"}
+            mb={comingSoon ? "1" : "6"}
+            zIndex={1}
+          >
+            {name}
+          </Heading>
+        )}
+
         {comingSoon && (
           <Text fontWeight={"light"} color={"brand.main.400"} fontSize={"sm"}>
             Coming Soon
           </Text>
         )}
-        <Text noOfLines={4}>{description}</Text>
+        <Text noOfLines={fullDetails ? Number.POSITIVE_INFINITY : 4}>
+          {description}
+        </Text>
+        {fullDetails && technologies && (
+          <Box
+            display={"flex"}
+            gap={2}
+            flexWrap={"wrap"}
+            alignItems={"baseline"}
+            mt={4}
+          >
+            <Text fontWeight={"bold"}>Technologies:</Text>
+            {technologies.map((technology) => (
+              <Badge
+                variant={"subtle"}
+                colorScheme="cyan"
+                key={technology}
+                userSelect={"none"}
+              >
+                {technology}
+              </Badge>
+            ))}
+          </Box>
+        )}
       </CardBody>
-      <CardFooter justifySelf={"end"}>
-        <HStack>
+      <CardFooter justifySelf={"end"} {...(fullDetails && { px: "0" })}>
+        <HStack display={"flex"}>
           {
             //TODO: change button chevron right to icons not text
           }
           <Button
+            size={"sm"}
             _hover={{
               bg: "gray.600",
             }}
@@ -114,6 +148,7 @@ const ProjectCard = ({
             Live Demo {">"}
           </Button>
           <Button
+            size={"sm"}
             _hover={{
               bg: "gray.600",
               cursor: "pointer",
@@ -126,23 +161,32 @@ const ProjectCard = ({
             href={githubRepoLink}
             target="_blank"
             isDisabled={!githubRepoLink}
+            cursor={!githubRepoLink ? "not-allowed !important" : "pointer"}
           >
             GitHub {">"}
           </Button>
-          <IconButton
-            aria-label="expand"
-            icon={<ExpandIcon />}
-            onClick={() => {
-              setSelectedProject({
-                name,
-                description,
-                githubRepoLink,
-                liveDemoLink,
-                imgPath,
-              });
-              onOpen();
-            }}
-          />
+          {!isOpen && (
+            <Tooltip label="See full details">
+              <IconButton
+                justifySelf={"end"}
+                variant={"ghost"}
+                aria-label="expand"
+                icon={<ExpandIcon />}
+                onClick={() => {
+                  setSelectedProject({
+                    id,
+                    name,
+                    description,
+                    githubRepoLink,
+                    liveDemoLink,
+                    technologies,
+                    imgPath,
+                  });
+                  onOpen();
+                }}
+              />
+            </Tooltip>
+          )}
         </HStack>
       </CardFooter>
     </Card>

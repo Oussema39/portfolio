@@ -20,9 +20,6 @@ const ServiceCard = ({ service }: { service: Service }) => {
     <Card flexDir="column" alignItems="center" py={10} maxW={"md"}>
       <CardHeader justifyContent="center" display="flex">
         <Circle bg="brand.main.100" maxWidth="fit-content">
-          {/* <ComputerIcon color="brand.main.default" boxSize="20" /> */}
-          {/* <SolutionIcon color="brand.main.default" boxSize="20" /> */}
-          {/* <DataReportsIcon color="brand.main.default" boxSize="20" /> */}
           <CardIcon color="brand.main.default" boxSize="20" />
         </Circle>
       </CardHeader>
@@ -32,7 +29,7 @@ const ServiceCard = ({ service }: { service: Service }) => {
         </Heading>
         <Text maxW="container.md">{description}</Text>
       </CardBody>
-      <CardFooter
+      {/* <CardFooter
         cursor="pointer"
         transition="color 0.2s ease"
         _hover={{
@@ -42,7 +39,7 @@ const ServiceCard = ({ service }: { service: Service }) => {
         <Circle border="2px" padding={2} maxWidth="fit-content">
           <ArrowForwardIcon boxSize={6} />
         </Circle>
-      </CardFooter>
+      </CardFooter> */}
     </Card>
   );
 };

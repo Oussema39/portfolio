@@ -3,6 +3,7 @@ export interface Project {
   imgPath?: string;
   name: string;
   description?: string;
+  technologies?: string[];
   liveDemoLink?: string;
   githubRepoLink?: string;
 }

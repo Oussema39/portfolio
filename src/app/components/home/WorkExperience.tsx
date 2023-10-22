@@ -6,6 +6,7 @@ import { workExperiences } from "@/app/data/workExperiences";
 const WorkExperience = () => {
   return (
     <Box
+      id="experience"
       isolation="isolate"
       position="relative"
       _after={{

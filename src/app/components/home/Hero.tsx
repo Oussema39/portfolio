@@ -7,7 +7,7 @@ import { aboutMe } from "@/app/utils/personal";
 
 const Hero = () => {
   return (
-    <Box bg="brand.main.100">
+    <Box bg="brand.main.100" id="home">
       <Section
         display={["block", "block", "grid"]}
         gridTemplateColumns="1fr 1fr"

@@ -16,7 +16,7 @@ import EmailButton from "../EmailButton";
 
 const AboutMe = () => {
   return (
-    <Section title="About me" withDivider>
+    <Section title="About me" withDivider id="about">
       <Grid
         display={["block", "block", "grid"]}
         gridTemplateColumns={"repeat(3, 1fr)"}

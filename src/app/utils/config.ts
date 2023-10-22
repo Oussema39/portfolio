@@ -18,3 +18,30 @@ export const Navbarlinks: Link[] = [
     href: "/contact",
   },
 ];
+
+export const NavbarInnerLinks: Link[] = [
+  {
+    label: "Home",
+    href: "home",
+  },
+  {
+    label: "About",
+    href: "about",
+  },
+  {
+    label: "Services",
+    href: "services",
+  },
+  {
+    label: "Experiences",
+    href: "experience",
+  },
+  {
+    label: "Projects",
+    href: "projects",
+  },
+  {
+    label: "Feedback",
+    href: "feedback",
+  },
+];

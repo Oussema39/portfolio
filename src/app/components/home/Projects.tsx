@@ -24,7 +24,7 @@ const Projects = () => {
   const { isOpen, onClose, selectedProject } = useProjectModalContext();
 
   return (
-    <Box bg="brand.main.100">
+    <Box bg="brand.main.100" id="projects">
       <Section
         title="Projects"
         subtitle="During the development of each project I have acquired wide range of skills"

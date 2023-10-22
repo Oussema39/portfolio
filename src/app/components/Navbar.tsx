@@ -1,35 +1,35 @@
-import { Box, Button, Container, Flex } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Link } from "@chakra-ui/react";
 import React from "react";
 import ChakraLink from "./custom/ChakraLink";
 import NavbarMenu from "./NavbarMenu";
 import Logo from "./Logo";
-import { Navbarlinks } from "../utils/config";
+import { NavbarInnerLinks, Navbarlinks } from "../utils/config";
 
 const Navbar = () => {
   return (
-    <Container maxWidth="container.xl" bg="transparent">
+    <Container maxWidth="container.xl" bg="transparent" id="navbar">
       <Flex alignItems="center" justifyContent="space-between" py={3}>
         <ChakraLink href="/">
           <Logo />
         </ChakraLink>
         <Flex display={["none", "none", "inline-flex"]} gap={8}>
-          {Navbarlinks.map(({ href, label }) => (
-            <ChakraLink
-              key={href.toString()}
-              href={href}
+          {NavbarInnerLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={`#${href}`}
               _hover={{
                 color: "brand.main.default",
               }}
               fontSize="lg"
             >
               {label}
-            </ChakraLink>
+            </Link>
           ))}
         </Flex>
         <Box display={["block", "block", "none"]}>
           <NavbarMenu />
         </Box>
-        <Button
+        {/* <Button
           display={["none", "none", "block"]}
           size="lg"
           bg="brand.main.default"
@@ -39,7 +39,7 @@ const Navbar = () => {
           }}
         >
           Hire Me
-        </Button>
+        </Button> */}
       </Flex>
     </Container>
   );

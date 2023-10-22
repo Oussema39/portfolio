@@ -6,6 +6,7 @@ import { services } from "@/app/data/services";
 const MyServices = () => {
   return (
     <Box
+      id="services"
       isolation="isolate"
       bg="brand.main.100"
       position="relative"

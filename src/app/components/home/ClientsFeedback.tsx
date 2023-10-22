@@ -6,6 +6,7 @@ import { feedbacks } from "@/app/data/feedbacks";
 const ClientsFeedback = () => {
   return (
     <Box
+      id="feedback"
       isolation="isolate"
       position="relative"
       _after={{

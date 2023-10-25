@@ -1,4 +1,5 @@
 import ChakraUIProvider from "@/app/context/ChakraUIProvider";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import Footer from "./components/Footer";
@@ -21,6 +22,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ChakraUIProvider>
+        <Analytics />
       </body>
     </html>
   );

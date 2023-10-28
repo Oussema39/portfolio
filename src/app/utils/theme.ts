@@ -63,10 +63,19 @@ const theme = extendTheme({
         color: "brand.main.default",
         backgroundColor: "black",
       },
+      "::-webkit-scrollbar": {
+        background: "transparent",
+        width: "8px",
+      },
+      "::-webkit-scrollbar-thumb": {
+        background: "#ec5b53",
+        borderRadius: "5rem",
+      },
       "*": {
         boxSizing: "border-box",
         padding: 0,
         margin: 0,
+        scrollbarWidth: "thin",
       },
       html: {
         scrollBehavior: "smooth",

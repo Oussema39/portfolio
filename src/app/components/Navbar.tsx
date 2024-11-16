@@ -1,5 +1,5 @@
 "use client";
-import { Box, Container, Flex, Link } from "@chakra-ui/react";
+import { Box, Container, Flex, Link, useColorMode } from "@chakra-ui/react";
 import ChakraLink from "./custom/ChakraLink";
 import NavbarMenu from "./NavbarMenu";
 import Logo from "./Logo";
@@ -7,6 +7,7 @@ import { NavbarInnerLinks } from "../utils/config";
 import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
+  const { toggleColorMode } = useColorMode();
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
 
@@ -31,8 +32,8 @@ const Navbar = () => {
       width="100%"
       zIndex="sticky"
       background="none"
-      backdropFilter="blur(5px)"
-      backgroundColor="common.white"
+      backdropFilter="blur(20px)"
+      backgroundColor="rgba(255,255,255,0.2)"
       transition="transform 0.3s"
       transform={`translateY(${hidden ? "-100%" : 0})`}
     >
@@ -54,6 +55,10 @@ const Navbar = () => {
                 {label}
               </Link>
             ))}
+            {/* TODO: implement experimental dark mode */}
+            {/* <Box cursor="pointer" onClick={toggleColorMode}>
+              <LightDarkIcon boxSize="6" />
+            </Box> */}
           </Flex>
           <Box display={["block", "block", "none"]}>
             <NavbarMenu />

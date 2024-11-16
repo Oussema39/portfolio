@@ -56,6 +56,7 @@ const theme = extendTheme({
       },
       html: {
         scrollBehavior: "smooth",
+        scrollPaddingTop: "40px",
       },
       a: {
         textDecoration: "none !important",

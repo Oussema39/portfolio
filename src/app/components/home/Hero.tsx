@@ -27,6 +27,7 @@ const Hero = () => {
         }}
         subtitleHeadingProps={{
           textAlign: ["center", "center", "left"],
+          color: "",
         }}
         subtitle={aboutMe}
       >

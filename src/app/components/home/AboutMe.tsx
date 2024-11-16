@@ -34,12 +34,12 @@ const AboutMe = () => {
           <Divider variant="custom" width={["5rem", "7rem", "7rem"]} mb={6} />
         </GridItem>
         <GridItem gridArea={"paragraph1"}>
-          <Text mb={4} textAlign="justify" color="brand.accent.400">
+          <Text mb={4} textAlign="justify">
             {aboutMeExtended[0]}
           </Text>
         </GridItem>
         <GridItem gridArea={"paragraph2"}>
-          <Text mb={8} textAlign="justify" color="brand.accent.400">
+          <Text mb={8} textAlign="justify">
             {aboutMeExtended[1]}
           </Text>
         </GridItem>

@@ -25,7 +25,7 @@ const Home = () => {
         position={"fixed"}
         as={"a"}
         aria-label="scroll-up"
-        href="#navbar"
+        href="#home"
         icon={<ChevronUpIcon color={"brand.main.default"} />}
         bottom={10}
         right={10}

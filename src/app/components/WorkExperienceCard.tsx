@@ -2,12 +2,10 @@ import {
   Card,
   CardBody,
   Circle,
-  HStack,
   Heading,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
 import { WorkExperience } from "../interface/WorkExperience";
 
 const WorkExperienceCard = ({

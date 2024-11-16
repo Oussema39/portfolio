@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import Section from "../Section";
 import MePicture from "../MePicture";
 import ActionButton from "../ActionButton";
@@ -7,7 +7,7 @@ import { aboutMe } from "@/app/utils/personal";
 
 const Hero = () => {
   return (
-    <Box bg="brand.main.100" id="home">
+    <Box id="home">
       <Section
         display={["block", "block", "grid"]}
         gridTemplateColumns="1fr 1fr"

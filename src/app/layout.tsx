@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Navbar from "@/app/components/Navbar";
 import Footer from "./components/Footer";
+import { Box } from "@chakra-ui/react";
 
 export const metadata: Metadata = {
   title: "Oussema Heni",
@@ -19,7 +20,7 @@ export default function RootLayout({
       <body>
         <ChakraUIProvider>
           <Navbar />
-          {children}
+          <Box pt="16">{children}</Box>
           <Footer />
         </ChakraUIProvider>
         <Analytics />

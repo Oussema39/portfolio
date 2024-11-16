@@ -69,13 +69,13 @@ export const projects: Project[] = [
     githubRepoLink: "https://github.com/Oussema39/insightful-reads",
     technologies: ["Next.js", "NextAuth", "React", "Material UI", "ColorThief"],
   },
-  {
-    id: 5,
-    name: "Password generator",
-    description:
-      "This is a simple Next.js web application that generates random passwords and provides the ability to refresh for a new password or copy the generated password to the clipboard.",
-    imgPath: `${screenshotsFolderPath}/password-generator/preview.png`,
-    githubRepoLink: "https://github.com/Oussema39/password-generator",
-    technologies: ["Next.js", "Styled-Components", "JavaScript"],
-  },
+  // {
+  //   id: 5,
+  //   name: "Password generator",
+  //   description:
+  //     "This is a simple Next.js web application that generates random passwords and provides the ability to refresh for a new password or copy the generated password to the clipboard.",
+  //   imgPath: `${screenshotsFolderPath}/password-generator/preview.png`,
+  //   githubRepoLink: "https://github.com/Oussema39/password-generator",
+  //   technologies: ["Next.js", "Styled-Components", "JavaScript"],
+  // },
 ];

@@ -1,6 +1,6 @@
 "use client";
 import { useDisclosure } from "@chakra-ui/react";
-import React, { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext, useState } from "react";
 import { Project } from "../interface/Project";
 
 type ProjectModalContextType = {

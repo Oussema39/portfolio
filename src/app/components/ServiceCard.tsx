@@ -1,17 +1,13 @@
 "use client";
-
 import {
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Circle,
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Service } from "../interface/Service";
-import { DataReportsIcon } from "../icons/DataReportsIcon";
 
 const ServiceCard = ({ service }: { service: Service }) => {
   const { title, description, icon: CardIcon } = service;

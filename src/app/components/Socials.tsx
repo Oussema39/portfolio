@@ -1,8 +1,6 @@
 import { Flex, Link, Tooltip } from "@chakra-ui/react";
 import { LinkedinIcon } from "../icons/LinkedinIcon";
 import { TwitterIcon } from "../icons/TwitterIcon";
-import { FacebookIcon } from "../icons/FacebookIcon";
-import { InstagramIcon } from "../icons/InstagramIcon";
 import { GithubIcon } from "../icons/GithubIcon";
 import { FreelancerIcon } from "../icons/FreelancerIcon";
 

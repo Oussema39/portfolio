@@ -13,7 +13,8 @@ import {
   useBoolean,
 } from "@chakra-ui/react";
 import ChakraLink from "./custom/ChakraLink";
-import { Navbarlinks } from "../utils/config";
+import { NavbarInnerLinks } from "../utils/config";
+import EmailButton from "./EmailButton";
 
 const NavbarMenu = () => {
   const [open, setOpen] = useBoolean();
@@ -35,11 +36,11 @@ const NavbarMenu = () => {
       />
       <MenuList>
         <MenuGroup>
-          {Navbarlinks.map(({ href, label }) => (
+          {NavbarInnerLinks.map(({ href, label }) => (
             <MenuItem
               key={href.toString()}
               as={ChakraLink}
-              href={href}
+              href={`#${href}`}
               _hover={{
                 color: "brand.main.default",
               }}
@@ -62,7 +63,7 @@ const NavbarMenu = () => {
               bg: "brand.main.default",
             }}
           >
-            Hire Me
+            <EmailButton>Contact</EmailButton>
           </MenuItem>
         </MenuGroup>
       </MenuList>

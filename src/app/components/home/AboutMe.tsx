@@ -5,7 +5,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  Link,
   Text,
 } from "@chakra-ui/react";
 import Section from "../Section";

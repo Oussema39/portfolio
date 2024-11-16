@@ -14,7 +14,7 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Project } from "../interface/Project";
 import ColorThief from "colorthief";
 import { ExpandIcon } from "../icons/ExpandIcon";
@@ -165,7 +165,7 @@ const ProjectCard = ({
           >
             GitHub {">"}
           </Button>
-          {!isOpen && (
+          {!fullDetails && (
             <Tooltip label="See full details">
               <IconButton
                 justifySelf={"end"}

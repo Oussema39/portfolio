@@ -1,20 +1,12 @@
 "use client";
-
-import { ArrowForwardIcon } from "@chakra-ui/icons";
 import {
   Card,
-  CardHeader,
-  Circle,
   CardBody,
-  Heading,
-  CardFooter,
   Text,
   Avatar,
   VStack,
   Divider,
-  Box,
 } from "@chakra-ui/react";
-import { ComputerIcon } from "../icons/ComputerIcon";
 import { QuotesIcon } from "../icons/QuotesIcon";
 import { Feedback } from "../interface/Feedback";
 

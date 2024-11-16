@@ -1,21 +1,21 @@
 import Link from "../interface/Link";
 
-export const Navbarlinks: Link[] = [
+export const NavBarLinks: Link[] = [
   {
     label: "Home",
-    href: "/home",
+    href: "home",
   },
   {
     label: "About",
-    href: "/about",
+    href: "about",
   },
   {
     label: "Portfolio",
-    href: "/portfolio",
+    href: "portfolio",
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: "contact",
   },
 ];
 

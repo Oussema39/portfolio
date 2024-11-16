@@ -1,41 +1,11 @@
 "use client";
-import { Box, Text, keyframes } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import { animateText } from "./animation/keyframes";
 
 type AnimatedTextProps = {
   text: string;
   color?: string;
 };
-
-const animate = keyframes`
-    0%,
-    100% {
-        clip-path: polygon(
-        0% 45%,
-        16% 44%,
-        33% 50%,
-        54% 60%,
-        70% 61%,
-        84% 59%,
-        100% 52%,
-        100% 100%,
-        0% 100%
-        );
-    }
-
-    50% {
-        clip-path: polygon(
-        0% 60%,
-        15% 65%,
-        34% 66%,
-        51% 62%,
-        67% 50%,
-        84% 45%,
-        100% 46%,
-        100% 100%,
-        0% 100%
-        );
-    }
-`;
 
 const AnimatedText = ({ text, color }: AnimatedTextProps) => {
   return (
@@ -54,7 +24,7 @@ const AnimatedText = ({ text, color }: AnimatedTextProps) => {
         color={color ?? "brand.main.default"}
         fontSize={"inherit"}
         position={"absolute"}
-        animation={`${animate} 4s ease-in-out infinite`}
+        animation={`${animateText} 4s ease-in-out infinite`}
       >
         {text}
       </Text>

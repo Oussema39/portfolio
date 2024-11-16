@@ -1,19 +1,15 @@
 "use client";
-import React from "react";
 import Section from "../Section";
 import {
   Box,
-  Button,
   Grid,
   GridItem,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
-  useColorMode,
 } from "@chakra-ui/react";
 import ProjectCard from "../ProjectCard";
 import { projects } from "@/app/data/projects";
@@ -24,7 +20,7 @@ const Projects = () => {
   const { isOpen, onClose, selectedProject } = useProjectModalContext();
 
   return (
-    <Box bg="brand.main.100" id="projects">
+    <Box id="projects">
       <Section
         title="Projects"
         subtitle="During the development of each project I have acquired wide range of skills"

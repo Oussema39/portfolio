@@ -1,7 +1,7 @@
 import { Box, Container, Flex, Text } from "@chakra-ui/react";
-import React from "react";
 import Socials from "./Socials";
 import Logo from "./Logo";
+import { proEmail } from "../utils/personal";
 
 const Footer = () => {
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
         >
           <Socials />
           <Flex direction={"column"} alignItems={"center"}>
-            <Logo dimensions={["100px"]} />
+            <Logo dimensions={["50px"]} />
             <Text fontSize={"md"} textAlign={"center"}>
               Copyright ©️ {new Date().getFullYear().toString()} Oussema Heni
             </Text>
@@ -27,7 +27,7 @@ const Footer = () => {
             fontWeight={"bold"}
             textAlign={["center", "left", "left"]}
           >
-            oussema.devpro@gmail.com
+            {proEmail}
           </Text>
         </Flex>
       </Container>

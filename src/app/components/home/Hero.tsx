@@ -6,6 +6,7 @@ import AnimatedText from "../AnimatedText";
 import { aboutMe } from "@/app/utils/personal";
 
 const Hero = () => {
+  const resumeUrl = process.env.NEXT_PUBLIC_RESUME_URL;
   return (
     <Box id="home">
       <Section
@@ -32,11 +33,7 @@ const Hero = () => {
         subtitle={aboutMe}
       >
         <Flex justifyContent={["center", "center", "start"]} mb={6}>
-          <Link
-            href="/files/Oussema_Heni_Resume.pdf"
-            target="_self"
-            download="Oussema_Heni_Resume"
-          >
+          <Link href={resumeUrl} target="_blank" download="Oussema_Heni_Resume">
             <ActionButton>Download Resume</ActionButton>
           </Link>
         </Flex>
